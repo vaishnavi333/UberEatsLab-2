@@ -55,16 +55,36 @@ const Cart = () => {
   };
 
   // Fetch a restaurant name and add it to the map
+  // const fetchRestaurantName = async (rest_id, namesMap) => {
+  //   try {
+  //     // const restaurantUrl = `${endpoints.restaurants}${rest_id}/`.replace(/\/+/g, '/'); // Fix double slashes
+  //     const restaurantUrl = `${endpoints.restaurants}${rest_id}/`; // Ensure the URL structure is valid
+  //     const restaurantResponse = await api.get(restaurantUrl);
+  //     namesMap.set(rest_id, restaurantResponse.data.name);
+  //   } catch (error) {
+  //     console.error(`Error fetching name for restaurant ${rest_id}:`, error);
+  //   }
+  // };
+
+// Fetch a restaurant name and add it to the map
+// Fetch a restaurant name and add it to the map
   const fetchRestaurantName = async (rest_id, namesMap) => {
     try {
-      // const restaurantUrl = `${endpoints.restaurants}${rest_id}/`.replace(/\/+/g, '/'); // Fix double slashes
-      const restaurantUrl = `${endpoints.restaurants}${rest_id}/`; // Ensure the URL structure is valid
+      const restaurantUrl = `${endpoints.restaurants}${rest_id}/`;
       const restaurantResponse = await api.get(restaurantUrl);
-      namesMap.set(rest_id, restaurantResponse.data.name);
+      const restaurantName = restaurantResponse.data.name;
+
+      // Add the restaurant name to the map
+      namesMap.set(rest_id, restaurantName);
+
+      // Update state with the new map
+      setRestaurantNames(new Map(namesMap));
     } catch (error) {
       console.error(`Error fetching name for restaurant ${rest_id}:`, error);
     }
   };
+
+
 
   // Fetch the default delivery address
   const fetchDefaultAddress = async () => {
@@ -127,7 +147,10 @@ const Cart = () => {
               }, new Map())
             ).map(([rest_id, items]) => (
               <div key={rest_id}>
-                <h6 className="restaurant-name">{restaurantNames.get(rest_id) || `Restaurant: ${rest_id}`}</h6>
+                {/* <h6 className="restaurant-name">{restaurantNames.get(rest_id) || `Restaurant: ${rest_id}`}</h6> */}
+                <h6 className="restaurant-name">
+                  {restaurantNames.has(rest_id)
+                    ? restaurantNames.get(rest_id): `Fetching name for Restaurant: ${rest_id}`}</h6>
                 <ListGroup className="cart-list">
                   {items.map((item) => (
                     <ListGroup.Item key={item.id} className="cart-item">

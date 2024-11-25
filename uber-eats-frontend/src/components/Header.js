@@ -30,7 +30,7 @@ function Header() {
           <Nav className="ml-auto" style={{ flexGrow: 1 }}> {/* Navigation links */}
             {user ? ( // Check if user is logged in
               <>
-                <Nav.Link as={Link} to="/userprofile" className="nav-link">Welcome, {user.user.username}</Nav.Link> {/* Display username */}
+                <Nav.Link as={Link} to="/userprofile" className="nav-link">Welcome {user.user.username}</Nav.Link> {/* Display username */}
                 <Nav.Link as={Link} to="/restaurants" className="nav-link">Restaurants</Nav.Link> {/* Link to restaurants page */}
                 <Nav.Link as={Link} to="/favorites" className="nav-link">Favorites</Nav.Link> {/* Link to favorites page */}
                 <Nav.Link as={Link} to="/order-history" className="nav-link">Order History</Nav.Link> {/* Link to order history */}
