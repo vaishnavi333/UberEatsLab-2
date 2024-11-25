@@ -1,0 +1,39 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+.vscode
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+/uber_eats_backend/venv
+/venv
+/uber_eats_backend/uber_eats_backend/__pycache__
+/uber_eats_backend/customers/__pycache__
+/uber_eats_backend/customers/migrations
+/uber_eats_backend/media
+/uber_eats_backend/restaurants/__pycache__
+/uber_eats_backend/restaurants/migrations
+/uber_eats_backend/restaurants/management/commands
+uber-eats-frontend/public/robots.txt
+
+uber_eats_backend/customers/__init__.py
+uber_eats_backend/customers/management/commands/__pycache__/add_sample_customers.cpython-312.pyc
+uber_eats_backend/customers/management/commands/__pycache__/add_sample_orders.cpython-312.pyc
+uber_eats_backend/restaurants/__init__.py
