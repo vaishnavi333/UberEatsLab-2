@@ -44,21 +44,14 @@ The Uber Eats Clone Project allows users to explore restaurants, place orders, a
 - cd uber-eats-clone/backend
 
 **Set Up a Virtual Environment:**
-- python -m venv venv
+- python -m venv venv (python3.10 -m venv venv -- worked for me) 
 - source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 **Install Dependencies:**
-- pip install -r requirements.txt
+- pip install -r requirements.txt (navigate to backend folder and download the requirements)
 
 ### Configure MongoDB:
-- Update settings.py with your MongoDB connection:
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'uber_eats_db',  # Replace with your database name
-    }
-}
+- Update settings.py with your MongoDB connection (mentioned in the setting.py)
 
 ### **Install MongoDB via MongoDB Installation Guide or using Homebrew:**
 - brew install mongodb-community@6.0
@@ -67,7 +60,7 @@ DATABASES = {
 ### **Access MongoDB shell:**
 - mongosh
 ### **Create a database:**
-- use uber_eats_db (use <database_name>
+- use uber_eats (use <database_name>
 
 ### **Run Migrations:**
 - python manage.py makemigrations
