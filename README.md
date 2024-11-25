@@ -60,7 +60,7 @@ The Uber Eats Clone Project allows users to explore restaurants, place orders, a
 ### **Access MongoDB shell:**
 - mongosh
 ### **Create a database:**
-- use uber_eats (use <database_name>
+- use uber_eats (use <database_name> -- which also starts the server)
 
 ### **Run Migrations:**
 - python manage.py makemigrations
